@@ -13,17 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageViewL: UIImageView!
     @IBOutlet weak var diceImageViewR: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        diceImageViewL.image = #imageLiteral(resourceName: "DiceSix")
-        diceImageViewR.image = #imageLiteral(resourceName: "DiceTwo")
-    }
-
+    
+    
     @IBAction func rollButtonPressed(_ sender: UIButton) {
-        print("Two 4's!")
-        diceImageViewL.image = #imageLiteral(resourceName: "DiceFour")
-        diceImageViewR.image = #imageLiteral(resourceName: "DiceFour")
+        let dice = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+        
+        // Swift provides .randomeElement() to return a random elemeent from an array
+        diceImageViewL.image = dice.randomElement()
+        diceImageViewR.image = dice.randomElement()
     }
     
 }
